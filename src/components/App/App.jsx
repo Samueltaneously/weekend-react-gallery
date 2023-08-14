@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList';
@@ -29,15 +29,15 @@ function App() {
   const changeLikes = (item, like) => {
     let thumbs;
     if (like === 'up') {
-     thumbs = 1;
+      thumbs = 1;
       // item.likes += 1;
       // item.dislikes -=1;
     } else if (like === 'down') {
       // item.likes -= 1;
-     thumbs = -1;
+      thumbs = -1;
       // item.dislikes += 1;
-    // } else {
-    //   console.log('Need to pass in direction of up or down');
+      // } else {
+      //   console.log('Need to pass in direction of up or down');
     }
 
     axios
@@ -52,21 +52,22 @@ function App() {
   };
 
 
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Gallery of the Best Things</h1>
-        </header>
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1 className="App-title">Gallery of the Best Things</h1>
+      </header>
 
-        <p>My Gallery</p>
+      <h2>My Gallery</h2>
+      <hr className='galleryDividers' />
 
-        <GalleryList
-          galleryPieces={galleryPieces}
-          changeLikes={changeLikes}
-        />
+      <GalleryList
+        galleryPieces={galleryPieces}
+        changeLikes={changeLikes}
+      />
 
-      </div>
-    );
+    </div>
+  );
 }
 
 export default App;
